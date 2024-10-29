@@ -18,7 +18,7 @@ public class CategoryDto {
 
 
     public CategoryDto(Category category) { //엔티티 -> DTO로 변환하는 생성자
-        this.id = category.getId();
+        this.id = category.getCategoryId();
         this.title = category.getTitle();
         this.description = category.getDescription();
         this.themeClass = category.getThemeClass();

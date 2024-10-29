@@ -28,7 +28,9 @@ public class CategoryController {
         return "category/category-add"; }// category-add.html 템플릿 파일 반환
 
     @GetMapping("/edit/{id}")
-    public String editCategoryPage(){ return "category/category-edit"; }
+    public String editCategoryPage(){
+        return "category/category-edit";
+    }
 
     @GetMapping("/category-list") // 모든 카테고리 조회
     public ResponseEntity<List<CategoryDto>> getAllCategories() {

@@ -32,9 +32,7 @@ public class Item extends BaseEntity {
     private String title; // 상품명
 
     @ManyToOne
-    @JoinColumn(name = "category_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT)) // 외래 키 제약을 사용하지 않음
-    //순환참조 방지(부모)
-    @JsonManagedReference
+    @JoinColumn(name = "category_id") // 외래 키 제약을 사용하지 않음
     private Category category;
 
     @Column(nullable = false)
