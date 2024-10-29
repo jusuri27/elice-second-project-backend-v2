@@ -1,0 +1,130 @@
+/* 헤더  */
+.header-search-input {
+  width: 20rem;
+}
+
+.navbar-menu .is-info:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* 이미지 슬라이드  */
+.slider-arrow-container {
+  position: relative;
+}
+.slider-arrow {
+  position: absolute;
+  top: 500px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+.slider-arrow:hover {
+  opacity: 0.6;
+}
+.slider-arrow-left {
+  left: 0;
+}
+.slider-arrow-right {
+  right: 0;
+}
+
+#slider .card {
+  outline: none;
+  border: white 1px solid;
+  box-shadow: none;
+  cursor: pointer;
+}
+#slider .title:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+#slider .notification:not(:last-child) {
+  margin-bottom: 0;
+}
+#slider .column {
+  padding: 0;
+}
+
+/* 바디(상품)  */
+.title_wrap {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1280px;
+    margin-bottom: 16px;
+}
+
+.item-title {
+    color: #000;
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 48px;
+}
+
+.item-sub_title {
+    color: rgba(34, 34, 34, .5);
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.home-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 1280px;
+}
+
+.home-items {
+    width: 230px;
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+.img_box {
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+.info_box {
+    padding: 9px 4px 0;
+}
+
+.brand-text {
+    align-items: center;
+    color: #222;
+    display: inline-flex;
+    font-size: 13px;
+    font-weight: 700;
+    height: 17px;
+    line-height: 17px;
+    margin-bottom: 2px;
+}
+
+.detail-description {
+    color: #222;
+    display: -webkit-box;
+    font-size: 13px;
+    line-height: 16px;
+    max-height: 34px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.item-price {
+    padding-top: 12px;
+}
+
+.item-price-text {
+    color: #222;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -.04px;
+    line-height: 17px;
+    vertical-align: top;
+}

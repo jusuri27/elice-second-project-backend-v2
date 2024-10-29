@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shopping Mall - 카테고리 수정</title>
+    <!-- 아이콘 -->
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/elice-rabbit-favicon.png"
+    />
+    <!-- bulma css 관련 -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <!-- 폰트 어썸: 아이콘 -->
+    <script
+            defer
+            src="https://kit.fontawesome.com/9daa42bcef.js"
+            crossorigin="anonymous"
+    ></script>
+    <!-- AWS S3 사용하기 위한 파일 -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.410.0.min.js"></script>
+    <!-- 커스텀 css 분리된 상태 -->
+    <link rel="stylesheet" href="/css/category/category-edit.css" />
+    <script src="/js/category/category-edit.js" type="module" defer></script>
+    <link rel="stylesheet" href="/css/common/common.css" />
+</head>
+<body>
+<!-- 헤더 -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<!-- 카테고리 수정 폼(Form) -->
+<section class="section">
+    <div class="container">
+        <div class="block account-header">
+            <h1 class="subtitle is-4">카테고리 수정</h1>
+        </div>
+        <div class="register-category-form-container">
+            <form
+                    class="box register-category-form-box"
+                    id="editCategoryForm"
+            >
+                <p class="title is-5 has-text-primary">카테고리 수정하기</p>
+                <div class="field">
+                    <label class="label" for="titleInput">카테고리 이름</label>
+                    <div class="control">
+                        <input
+                                class="input"
+                                id="titleInput"
+                                type="text"
+                                placeholder="Men Clothes"
+                                autocomplete="on"
+                        />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="descriptionInput">카테고리 설명</label>
+                    <div class="control">
+                        <input
+                                class="input"
+                                id="descriptionInput"
+                                type="text"
+                                placeholder="센세이셔널한 봄, 여름 코디"
+                                autocomplete="on"
+                        />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="themeSelectBox">카테고리 테마</label>
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select id="themeSelectBox">
+                                <option value="default" selected disabled hidden>테마를 선택해 주세요.</option>
+
+                                <option
+                                        value="#f4f4f4"
+                                        style="background-color: #f4f4f4; color: #00947e"
+                                >
+                                    light grey
+                                </option>
+                                <option
+                                        value="#ebfffc"
+                                        style="background-color: #ebfffc; color: #00947e"
+                                >
+                                    light skygreen
+                                </option>
+
+                                <option
+                                        value="#eff1fa"
+                                        style="background-color: #eff1fa; color: #3850b7"
+                                >
+                                    light purple
+                                </option>
+
+                                <option
+                                        value="eff5fb"
+                                        style="background-color: #eff5fb; color: #296fa8"
+                                >
+                                    light blue
+                                </option>
+
+                                <option
+                                        value="#effaf5"
+                                        style="background-color: #effaf5; color: #257953"
+                                >
+                                    light green
+                                </option>
+
+                                <option
+                                        value="#fffaeb"
+                                        style="background-color: #fffaeb; color: #946c00"
+                                >
+                                    light yellow
+                                </option>
+
+                                <option
+                                        value="#feecf0"
+                                        style="background-color: #feecf0; color: #cc0f35"
+                                >
+                                    light pink
+                                </option>
+
+                                <option
+                                        value="#00d1b2"
+                                        style="background-color: #00d1b2; color: #fff"
+                                >
+                                    skygreen
+                                </option>
+
+                                <option
+                                        value="#485fc7"
+                                        style="background-color: #485fc7; color: #fff"
+                                >
+                                    blue
+                                </option>
+
+                                <option
+                                        value="#3e8ed0"
+                                        style="background-color: #3e8ed0; color: #fff"
+                                >
+                                    skyblue
+                                </option>
+
+                                <option
+                                        value="#48c78e"
+                                        style="background-color: #48c78e; color: #fff"
+                                >
+                                    green
+                                </option>
+
+                                <option
+                                        value="#ffe08a"
+                                        style="
+                        background-color: #ffe08a;
+                        color: rgba(0, 0, 0, 0.7);
+                      "
+                                >
+                                    yellow
+                                </option>
+
+                                <option
+                                        value="#f14668"
+                                        style="background-color: #f14668; color: #fff"
+                                >
+                                    red
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-fullwidth mb-5">
+                    <label class="label" for="imageInput">카테고리 사진</label>
+                    <div class="file has-name is-fullwidth">
+                        <label class="file-label">
+                            <input
+                                    class="file-input"
+                                    id="imageInput"
+                                    type="file"
+                                    name="image-file"
+                                    accept=".png, .jpeg, .jpg"
+                            />
+                            <span class="file-cta">
+                    <span class="file-icon">
+                      <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label"> 사진 업로드 </span>
+                  </span>
+                            <span class="file-name" id="fileNameSpan">
+                    사진파일 (png, jpg, jpeg)
+                  </span>
+                        </label>
+                    </div>
+                </div>
+                <button class="button is-primary is-fullwidth" id="editCategoryButton">
+                    카테고리 수정하기
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

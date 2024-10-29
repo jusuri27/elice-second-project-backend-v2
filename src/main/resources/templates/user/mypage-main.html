@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마이페이지</title>
+  <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/elice-rabbit-favicon.png"
+  />
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+  />
+  <script
+          defer
+          src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"
+  ></script>
+
+  <script
+          defer
+          src="https://kit.fontawesome.com/9daa42bcef.js"
+          crossorigin="anonymous"
+  ></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.410.0.min.js"></script>
+
+  <link rel="stylesheet" href="css/home/home.css" />
+  <script src="js/home/home.js" type="module" defer></script>
+  <script src="/js/login-logout.js" type="module" defer></script>
+  <script src="/js/user/me.js" type="module" defer></script>
+  <link rel="stylesheet" href="/css/common/common.css" />
+
+  <style>
+  .mypage-title a {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  }
+
+  .larger-text {
+  font-size: 1rem;
+  font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+
+<!-- 네비게이션 바 -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <aside class="column is-3">
+        <nav class="menu">
+          <p class="menu-label mypage-title">
+            <a href="/users/me">마이 페이지</a></p>
+          <ul class="menu-list">
+            <li class="larger-text">쇼핑 정보</li>
+            <li><a href="/users/me/purchase">구매 내역</a></li>
+            <li><a href="/selling">판매 내역</a></li>
+            <li class="larger-text">내 정보</li>
+            <li><a href="/users/me/account">계정 관리</a></li>
+            <li><a href="/users/me/address">주소록</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="column is-9">
+        <div class="box">
+          <p><span id="name"></span>님 환영합니다.</p>
+          <p>여기서 구매내역, 판매내역, 계정관리, 주소록을 확인할 수 있습니다.</p>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
+
