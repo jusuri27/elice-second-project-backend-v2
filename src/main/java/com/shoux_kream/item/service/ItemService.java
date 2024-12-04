@@ -147,7 +147,7 @@ public class ItemService {
         return new ItemUpdateRequest(
                 item.getId(),
                 item.getTitle(),
-                item.getCategory().getId(),
+                item.getCategory().getCategoryId(),
                 item.getManufacturer(),
                 item.getShortDescription(),
                 item.getDetailDescription(),
